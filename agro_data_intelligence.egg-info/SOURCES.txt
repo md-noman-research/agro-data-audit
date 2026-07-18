@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+agro_data_intelligence.egg-info/PKG-INFO
+agro_data_intelligence.egg-info/SOURCES.txt
+agro_data_intelligence.egg-info/dependency_links.txt
+agro_data_intelligence.egg-info/requires.txt
+agro_data_intelligence.egg-info/top_level.txt
+data_audit/__init__.py
+data_audit/accessor.py
+data_audit/ml.py
+data_audit/report.py
+tests/test_audit.py
