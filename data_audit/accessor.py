@@ -244,12 +244,12 @@ class DataAuditAccessor:
         """
         return summary_report(self._obj)
 
-    def report(self, format="text"):
+    def report(self, report_format="text"):
         """
         Generates a comprehensive audit and Machine Learning report.
         
         Args:
-            format (str): The format of the report. Currently supports 'text'.
+            report_format (str): The format of the report. Currently supports 'text'.
             
         Returns:
             str: A textual report of total issues, ML model metrics, and dataset shape.
