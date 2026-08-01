@@ -16,7 +16,7 @@ def summary_report(df):
     )
 
 
-def audit_report(df, issues, ml_module, format="text"):
+def audit_report(df, issues, ml_module, _report_format="text"):
     """
     Generates a comprehensive audit report for the dataset.
     
@@ -24,7 +24,7 @@ def audit_report(df, issues, ml_module, format="text"):
         df (pd.DataFrame): The audited DataFrame.
         issues (pd.DataFrame): The DataFrame of identified data quality issues.
         ml_module (MLModule): The active MLModule instance to extract metrics from.
-        format (str): The format of the report (currently supports 'text').
+        report_format (str): The format of the report (currently supports 'text').
         
     Returns:
         str: A formatted text report summarizing data shape, issues found, 
