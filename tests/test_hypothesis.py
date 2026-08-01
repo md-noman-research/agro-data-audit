@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import pytest
 from hypothesis import given, settings, strategies as st
 from hypothesis.extra.pandas import data_frames, column
 import data_audit  # noqa: F401
