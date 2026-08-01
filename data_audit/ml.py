@@ -129,8 +129,9 @@ class MLModule:
 
         if not self.num_cols.empty:
             self.num_imputes = X[self.num_cols].median()
-            X.loc[:, self.num_cols] = X[self.num_cols].fillna(self.num_imputes)
-            X.loc[:, self.num_cols] = self.scaler.fit_transform(X[self.num_cols])
+            X.loc[:, self.num_cols] = self.scaler.fit_transform(
+                X[self.num_cols].fillna(self.num_imputes)
+            )
 
         if not self.cat_cols.empty:
             self.cat_imputes = X[self.cat_cols].mode().iloc[0]
@@ -217,8 +218,9 @@ class MLModule:
         X_new = data.reindex(columns=self.feature_list).copy()
 
         if not self.num_cols.empty:
-            X_new.loc[:, self.num_cols] = X_new[self.num_cols].fillna(self.num_imputes)
-            X_new.loc[:, self.num_cols] = self.scaler.transform(X_new[self.num_cols])
+            X_new.loc[:, self.num_cols] = self.scaler.transform(
+                X_new[self.num_cols].fillna(self.num_imputes)
+            )
         if not self.cat_cols.empty:
             X_new.loc[:, self.cat_cols] = X_new[self.cat_cols].fillna(self.cat_imputes)
 
