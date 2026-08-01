@@ -38,7 +38,8 @@ class MLModule:
         self.num_imputes = pd.Series(dtype=float)
         self.cat_imputes = pd.Series(dtype=object)
 
-    def _get_task_type(self, target_series):
+    @staticmethod
+    def _get_task_type(target_series):
         if (
             pd.api.types.is_numeric_dtype(target_series)
             and target_series.nunique() >= 20
@@ -61,7 +62,7 @@ class MLModule:
         if target not in self._df.columns:
             return f"Target '{target}' not found in DataFrame."
 
-        task = self._get_task_type(self._df[target])
+        task = MLModule._get_task_type(self._df[target])
         res = [f"--- ML Recommendation for '{target}' ---"]
         res.append(f"Detected Task Type: {task}")
         if task == "Regression":
