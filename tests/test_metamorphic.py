@@ -1,7 +1,6 @@
 import pytest
 import pandas as pd
 import numpy as np
-import data_audit
 
 @pytest.fixture
 def base_df():
