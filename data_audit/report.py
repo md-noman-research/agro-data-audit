@@ -16,7 +16,7 @@ def summary_report(df):
     )
 
 
-def audit_report(df, issues, ml_module, report_format="text"):
+def audit_report(df, issues, ml_module, _report_format="text"):
     """
     Generates a comprehensive audit report for the dataset.
     
